@@ -1,56 +1,53 @@
 {
-    /**********************************************************************
-     * vscodeのRemote Container拡張向け設定ファイル
-     ***********************************************************************/
-    "name": "game-dialy-backend",
-    "containerEnv": {
-        "TZ": "Asia/Tokyo"
-    },
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
-    "features": {
-        "ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/customink/codespaces-features/sam-cli:1": {},
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/devcontainers-contrib/features/typescript:2": {},
-        "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "editor.formatOnSave": true,
-            },
-            "extensions": [
-                // AWS
-                "amazonwebservices.aws-toolkit-vscode",
-                // Typescript系
-                "dbaeumer.vscode-eslint",
-                "esbenp.prettier-vscode",
-                // 基本
-                "christian-kohler.path-intellisense",
-                "mhutchie.git-graph",
-                "VisualStudioExptTeam.vscodeintellicode",
-                "formulahendry.auto-rename-tag",
-                "formulahendry.auto-close-tag",
-                "github.copilot",
-                "github.copilot-chat",
-                "github.copilot-labs",
-                "eamodio.gitlens",
-                "vscode-icons-team.vscode-icons",
-                "shd101wyy.markdown-preview-enhanced",
-                "ms-azuretools.vscode-docker",
-                "redhat.vscode-yaml",
-                "github.vscode-github-actions"
-            ]
-        }
-    },
-    // コンテナの初回生成時に実行したい処理
-    "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
-    // コンテナの起動成功時に実行したい処理
-    "postStartCommand": "/bin/bash ./.devcontainer/postStartCommand.sh",
-    // コンテナ内のどのユーザとして接続するか
-    "remoteUser": "vscode"
+  /**********************************************************************
+   * vscodeのRemote Container拡張向け設定ファイル
+   ***********************************************************************/
+  "name": "game-dialy-backend",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/customink/codespaces-features/sam-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-contrib/features/typescript:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // AWS
+        "amazonwebservices.aws-toolkit-vscode",
+        // Typescript系
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        // 基本
+        "christian-kohler.path-intellisense",
+        "mhutchie.git-graph",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.copilot-labs",
+        "eamodio.gitlens",
+        "vscode-icons-team.vscode-icons",
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+  // コンテナの初回生成時に実行したい処理
+  "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
+  // コンテナの起動成功時に実行したい処理
+  "postStartCommand": "/bin/bash ./.devcontainer/postStartCommand.sh",
+  // コンテナ内のどのユーザとして接続するか
+  "remoteUser": "vscode"
 }
