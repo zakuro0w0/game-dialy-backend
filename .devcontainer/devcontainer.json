@@ -13,11 +13,15 @@
   "features": {
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/customink/codespaces-features/sam-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-contrib/features/typescript:2": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  "runArgs": ["--add-host=host.docker.internal:host-gateway"],
+  "workspaceFolder": "${localWorkspaceFolder}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -44,6 +48,7 @@
       ]
     }
   },
+  "forwardPorts": [3000],
   // コンテナの初回生成時に実行したい処理
   "postCreateCommand": "/bin/bash ./.devcontainer/postCreateCommand.sh",
   // コンテナの起動成功時に実行したい処理
