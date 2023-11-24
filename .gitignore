@@ -1,3 +1,4 @@
 .ssh/
 .aws-sam/
+node_modules/
 chat.json
