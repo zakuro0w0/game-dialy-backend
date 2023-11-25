@@ -13,9 +13,7 @@ export class BackendStack extends cdk.Stack {
       handler: "handler",
       runtime: lambda.Runtime.NODEJS_20_X,
     });
-    fn.addFunctionUrl({
-      authType: lambda.FunctionUrlAuthType.NONE,
-    });
+
     new apigw.LambdaRestApi(this, "myapi", {
       handler: fn,
     });
