@@ -3,7 +3,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: "standard-with-typescript",
+  extends: ["standard-with-typescript", "eslint:recommended", "prettier"],
   overrides: [
     {
       env: {
@@ -13,6 +13,9 @@ module.exports = {
       parserOptions: {
         sourceType: "script",
       },
+    },
+    {
+      files: ["src/**/*.{js,ts}"],
     },
   ],
   parserOptions: {
