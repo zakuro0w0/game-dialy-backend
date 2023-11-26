@@ -14,8 +14,21 @@ export class BackendStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_20_X,
     });
 
-    new apigw.LambdaRestApi(this, "myapi", {
+    const api = new apigw.LambdaRestApi(this, "myapi", {
       handler: fn,
+      defaultMethodOptions: {
+        apiKeyRequired: true,
+      },
+    });
+    const apiKey = new apigw.ApiKey(this, "ApiKey", {
+      apiKeyName: "my-api-key",
+    });
+    const plan = api.addUsagePlan("UsagePlan", {
+      name: "my-usage-plan",
+    });
+    plan.addApiKey(apiKey);
+    plan.addApiStage({
+      stage: api.deploymentStage,
     });
   }
 }
